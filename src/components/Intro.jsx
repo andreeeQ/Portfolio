@@ -10,7 +10,7 @@ import {BsArrowRightSquareFill} from "react-icons/bs";
 function Intro() {
 
 return(
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center" id='home'>
 <div className="text-center mt-12 pt-64 pb-6">
 <h1 className="text-4xl mt-36  md:text-7xl mb-1 md:mb-3 pt-10 font-sil">Andre Marco P. Quimio</h1>
 <p className="text-base md:text-xl mb-3 font-medium font-oswald">Aspiring Web Developer</p>
