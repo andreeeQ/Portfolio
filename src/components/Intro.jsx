@@ -17,6 +17,7 @@ return(
 <button className="bg-orange-600 dark:bg-white-300 
     text-lg p-1 rounded-md"><Link to ="/Home"><BsArrowRightSquareFill size={'2em'}/></Link></button>
 </div>
+
 <div className="dark:invisible mt-12 pt-54 pb-6 absolute h-32 w-38 top-[2px] ">
 <img src = {logo}/>
 </div>

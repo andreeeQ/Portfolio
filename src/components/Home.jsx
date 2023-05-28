@@ -48,12 +48,14 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 
 
   return (
+    
     <>
+    
     <button   
     type="button"
     onClick={handleThemeSwitch}
-    className="fixed p-2 z-20 left-10 bottom-4 bg-stone-900 dark:bg-yellow-300
-    text-lg p-1 rounded-md">
+    className="fixed p-2 z-20 sm:left-10 bottom-4 bg-stone-900 dark:bg-yellow-300
+    text-lg rounded-md ">
    
    {theme === 'dark' ? sun : moon }
     </button>
@@ -61,17 +63,23 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
     dark:text-stone-300 min-h-screen font-inter ">
       <div className="max-w-5xl w-11/12 mx-auto"> 
 
- <Nav>
-    </Nav>
+
+<section>
+  <Nav />
+     </section>
+     <h1 className="mt-44 font-sil text-9xl text-center">My Projects</h1>
     <Portfolio/>
     <Aboutme />
     <Contact/>
     <Footer />
-   
+ 
     </div>
+    
     </div>
-
+    
+  
     </>
+    
   )
 
 
@@ -79,9 +87,8 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 }
 function Aboutme() {
   return(
-    <>
-    <Nav/>
-  <div className="flex flex-col md:flex-row justify-center my-20 ">
+    
+  <div className="flex flex-col md:flex-row justify-center my-20 " id='about'>
       <div className="w-full md:w-7/12">
           <Title>About me</Title>
   {aboutme.map(item => (<AboutmeItem
@@ -93,15 +100,14 @@ function Aboutme() {
       </div>
  
   </div>
-  </>
+  
   )
   }
 
   //Portfolio
   function Portfolio() {
     return(
-      <>
-      <Nav/>
+    
     <div className="flex flex-col md:flex-row items-center justify-center my-20 mt-10">
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7 mt-20">
     {portfolio.map(project => (<PortfolioItem
@@ -112,13 +118,13 @@ function Aboutme() {
         />))}
     </div>
     </div>
-    </>
+  
     )
     }
   //Contact  
     function Contact() {
       return(
-      <div className="flex flex-col mb-10 mx-auto">
+      <div className="flex flex-col mb-10 mx-auto" id='Contact'>
           <div className="flex justify-center items-center">
               <form action="https://getform.io/f/e48c026c-7ab6-4036-a4a9-e50f0436b54b"
               method="POST"
