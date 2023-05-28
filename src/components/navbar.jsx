@@ -17,8 +17,8 @@ const Nav = () => {
             <div className='md:flex items-center justify-between bg-stone-500 py-4 md:px-10 px-7'>
                 <div className='font-bold text-2xl cursor-pointer flex items-center text-gray-800'>
                 <span className=' w-12 text-indigo-400 mr-1 pt-2'>
-                <img className=' invisible dark:visible absolute w-16 ml-7' src = {logo2}/>
-                <img className='dark:invisible visible   w-16 ml-7 ' src = {logo}/> 
+                <img className=' invisible dark:visible absolute w-12 ml-7' src = {logo2}/>
+                <img className='dark:invisible visible  w-18 ml-7 ' src = {logo}/> 
                 </span> 
                 </div>
                 <div onClick={()=>setOpen(!open)} className='z-20 fixed text-lg w-10 right-5 top-6 cursor-pointer md:hidden'>
