@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './styles/tailwind.css'
 import Home from './components/Home';
-import Aboutme from './components/Home';
-import Contact from './components/Home';
+
+
 import {
   createBrowserRouter,
   RouterProvider,
   Route,
 } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -20,14 +21,7 @@ const router = createBrowserRouter([
     path:"/Home",
     element:<Home/>,
   },
-  {
-    path:"/aboutme",
-    element:<Aboutme/>,
-  },
-  {
-    path:"/contact",
-    element:<Contact/>,
-  },
+  
   
 ]);
 

@@ -6,10 +6,40 @@ import Title from "./Title";
 import portfolio from "../data/portfolio";
 import PortfolioItem from './PortfolioItem';
 import Nav from "./navbar";
+import {DotLoader} from "react-spinners";
+import ProgressBar from '@ramonak/react-progress-bar';
 
+
+
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBfMxVBflANFxOIwtWDaqeYenjaaS-UMO0",
+  authDomain: "andre-m-p-quimio.firebaseapp.com",
+  projectId: "andre-m-p-quimio",
+  storageBucket: "andre-m-p-quimio.appspot.com",
+  messagingSenderId: "395243683748",
+  appId: "1:395243683748:web:c0d7bc1a274278e50b4b31"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 //Home
 function Home() {
+
+  const [loading,setLoading] = useState(false);
+  useEffect(() => {
+setLoading(true)
+setTimeout(() =>{
+setLoading(false)
+},1500)
+  },[])
+
+
   const [theme, setTheme] = useState(null);
 
   useEffect(()=>{
@@ -49,6 +79,19 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 
   return (
     
+    <div>
+      {
+        loading ? 
+        <div className="h-screen w-full bg-stone-700 flex justify-center items-center pt-28">
+        <DotLoader
+        color={"orange"}
+        loading={loading}
+        size={80}
+       
+      />
+      </div>
+        :
+
     <>
     
     <button   
@@ -66,19 +109,22 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 
 <section>
   <Nav />
-     </section>
+</section>
      <h1 className="mt-44 font-sil text-9xl text-center">My Projects</h1>
     <Portfolio/>
-    <Aboutme />
+    <Aboutme/>
+    <Skillset/>
     <Contact/>
     <Footer />
- 
+    <app/>
     </div>
     
     </div>
     
   
     </>
+          }
+    </div>
     
   )
 
@@ -88,7 +134,7 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 function Aboutme() {
   return(
     
-  <div className="flex flex-col md:flex-row justify-center my-20 " id='about'>
+  <div className="flex flex-col md:flex-row justify-center my-20 " >
       <div className="w-full md:w-7/12">
           <Title>About me</Title>
   {aboutme.map(item => (<AboutmeItem
@@ -109,7 +155,7 @@ function Aboutme() {
     return(
     
     <div className="flex flex-col md:flex-row items-center justify-center my-20 mt-10">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-7 mt-20">
+    <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-7 mt-20 "id='about'>
     {portfolio.map(project => (<PortfolioItem
         imgUrl={project.imgUrl}
         title={project.title}
@@ -121,15 +167,60 @@ function Aboutme() {
   
     )
     }
+
+   //Skillset
+   const Skillset =() => {
+    return(
+        <div className="pl-60 z-20 md:flex-col md:mb-10 md:mt-20 md:mx-auto">
+            <h1 className="text-2xl font-oswald underline underline-offset-8 decoration-4
+            mb-5 text-stone-900 dark:text-white">Tools I've Learned</h1>
+            <div className='w-96 '>
+            <p>HTML</p>
+            <ProgressBar completed={80}
+            animateOnRender={true}/>
+
+            </div>
+           
+            <div className='w-96'>
+            <p>CSS</p>
+            <ProgressBar completed={70}
+            animateOnRender={true}/>
+
+            </div>
+
+            <div className='w-96'>
+            <p>Tailwind</p>
+            <ProgressBar completed={60}
+            animateOnRender={true}/>
+
+            </div>
+
+            <div className='w-96'>
+            <p>React</p>
+            <ProgressBar completed={50}
+            animateOnRender={true}/>
+
+            </div>
+
+            <div className='w-96 '>
+            <p>JavaScript</p>
+            <ProgressBar completed={50}
+            animateOnRender={true}/>
+
+            </div>
+
+        </div>
+        
+    )
+} 
   //Contact  
     function Contact() {
       return(
-      <div className="flex flex-col mb-10 mx-auto" id='Contact'>
+      <div className="flex flex-col mb-10 mt-20 mx-auto" id='Contact'>
           <div className="flex justify-center items-center">
               <form action="https://getform.io/f/e48c026c-7ab6-4036-a4a9-e50f0436b54b"
               method="POST"
               className="flex flex-col w-full md:w-7/12">
-      
                   <Title>Contact</Title>
                   <input type="text"
                   name="name"
