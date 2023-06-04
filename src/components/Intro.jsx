@@ -5,22 +5,7 @@ import './style.css';
 import {Link} from "react-router-dom";
 import {BsArrowRightSquareFill} from "react-icons/bs";
 
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBfMxVBflANFxOIwtWDaqeYenjaaS-UMO0",
-  authDomain: "andre-m-p-quimio.firebaseapp.com",
-  projectId: "andre-m-p-quimio",
-  storageBucket: "andre-m-p-quimio.appspot.com",
-  messagingSenderId: "395243683748",
-  appId: "1:395243683748:web:c0d7bc1a274278e50b4b31"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
   
 
 function Intro() {

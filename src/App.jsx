@@ -54,7 +54,7 @@ const moon =(<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
       <div className="max-w-5xl w-11/12 mx-auto"> 
 
     <Intro />
-    <app/>
+ 
 
     </div>
     </div>
